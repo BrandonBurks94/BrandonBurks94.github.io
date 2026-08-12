@@ -6,115 +6,307 @@
 
   <meta
     name="description"
-    content="Brandon Burks' computer science ePortfolio"
+    content="Brandon Burks' CS 499 computer science ePortfolio"
   >
 
   <title>Brandon Burks | Computer Science ePortfolio</title>
 
   <style>
+    :root {
+      --ink: #172033;
+      --muted: #5f6b7a;
+      --line: #d8dee8;
+      --page: #f5f7fb;
+      --panel: #ffffff;
+      --navy: #173b5f;
+      --blue: #0b6aa8;
+      --green: #18745f;
+      --gold: #9b6418;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
-      color: #1f2937;
-      background: #f8fafc;
+      color: var(--ink);
+      background: var(--page);
     }
 
     header,
     main,
     footer {
-      background: white;
-      padding: 2rem;
-      margin-bottom: 1rem;
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 32px 0 18px;
+    }
+
+    .intro {
+      padding: 28px;
+      background: var(--navy);
+      color: white;
       border-radius: 8px;
     }
 
-    h1,
-    h2 {
-      color: #12355b;
+    .intro p {
+      max-width: 760px;
+      margin: 8px 0 0;
+      color: #dce8f5;
     }
 
-    nav a {
-      margin-right: 1rem;
-      color: #005ea8;
+    h1,
+    h2,
+    h3 {
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: 1.75rem;
+      margin-top: 4px;
+    }
+
+    h3 {
+      color: #273449;
+      font-size: 1.15rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    nav a,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: white;
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus,
+    .button:hover,
+    .button:focus {
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+    }
+
+    section {
+      margin: 18px 0;
+      padding: 28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #e8f2fa;
+      color: #164567;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .tag.green {
+      background: #e5f4ef;
+      color: var(--green);
+    }
+
+    .tag.gold {
+      background: #fff2dc;
+      color: var(--gold);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0 0 12px;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 8px;
     }
 
     video {
       display: block;
       width: 100%;
-      max-height: 520px;
-      margin: 1rem 0;
+      max-height: 560px;
+      margin: 16px 0;
       background: #111827;
       border-radius: 8px;
     }
 
-    a:focus,
-    a:hover {
-      text-decoration-thickness: 3px;
+    footer {
+      padding: 18px 0 36px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      header,
+      main,
+      footer {
+        width: min(100% - 20px, 1080px);
+      }
+
+      .intro,
+      section {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>Brandon Burks</h1>
-    <p>Computer Science ePortfolio</p>
+    <div class="intro">
+      <h1>Brandon Burks</h1>
+      <p>Computer Science ePortfolio</p>
+    </div>
 
     <nav aria-label="Primary navigation">
-      <a href="#about">About</a>
-      <a href="#artifacts">Artifacts</a>
+      <a href="#self-assessment">Self-Assessment</a>
       <a href="#code-review">Code Review</a>
+      <a href="#artifacts">Artifacts</a>
+      <a href="#narratives">Narratives</a>
+      <a href="#outcomes">Outcomes</a>
     </nav>
   </header>
 
   <main>
-    <section id="about">
+    <section id="self-assessment">
       <h2>Professional Self-Assessment</h2>
-
       <p>
-        I am completing a Bachelor of Science in Computer Science and
-        preparing for a career as a technical program manager. My studies
-        have developed skills in application security, software architecture,
-        testing, full-stack development, and database design.
+        My Computer Science coursework and Capstone Project have increased my
+        knowledge of developing software as a total system. When I entered the
+        program I was interested in programming. As I am leaving the program, I
+        now understand the relationship between the architecture of software,
+        the use of data, algorithms for processing and organizing that data,
+        methods of verifying correctness, ways to protect against unauthorized
+        access or malicious attacks, ways of documenting software systems and
+        ways of communicating with stakeholders within those systems.
       </p>
-
       <p>
-        This ePortfolio will document how I apply technical knowledge,
-        communicate engineering decisions, manage trade-offs, and deliver
-        secure computing solutions that support stakeholder goals.
+        As a result of that interest and education, my area of focus will be
+        Backend and Full Stack Software Engineering, with an emphasis on secure
+        services and database-backed applications.
       </p>
-    </section>
-
-    <section id="artifacts">
-      <h2>Artifact Enhancements</h2>
-
       <p>
-        The portfolio will feature an enhanced version of the Travlr Getaways
-        full-stack application originally created in CS 465 Full Stack
-        Development.
+        My professional experience as a Software Engineer with Amazon Freight
+        Tech has also helped me connect my coursework to real software delivery.
+        In that role, I work within an engineering team, participate in sprint
+        planning, communicate technical progress and blockers, and contribute to
+        decisions that affect maintainability, reliability, and stakeholder
+        needs. That experience has reinforced the value of collaboration,
+        documentation, testing, and clear communication alongside technical
+        implementation.
       </p>
-
-      <ul>
-        <li>Software Design and Engineering</li>
-        <li>Algorithms and Data Structures</li>
-        <li>Databases</li>
-      </ul>
-
       <p>
-        Original and enhanced artifacts, supporting narratives, and
-        measurable results will be added as the capstone progresses.
+        This area of focus is supported through the artifact "Travlr Getaways"
+        which is a MEAN-stack application. It has a public travel site and an
+        Angular-based administrative single-page application. An Express/Node.js
+        API and MongoDB persistence support both the frontend and backend
+        functionality. The artifacts presented here, were not disparate pieces
+        of coursework. In addition to improving the overall quality of the
+        artifact, I demonstrated improvement over three areas: software design
+        and engineering, algorithms/data structures, and databases. Through this
+        methodology I showed that I could assess an existing system for risks,
+        create plans for enhancements, develop improvements, and validate
+        results with empirical measurements.
+      </p>
+      <p>
+        The resulting improvements to "Travlr Getaways" provide concrete
+        examples of professional growth. I enhanced the software's backend by
+        applying layered configuration, middleware, validation, service,
+        repository, and error handling. I made several significant design
+        improvements to ensure strong authentication related practices such as:
+        validating all required secret keys upon initialization, creating
+        reusable JWT middleware, strengthening password hashing and ensuring
+        sanitized error messages are returned to users. I created a new
+        recommendation endpoint based upon tokenization, an inverted index,
+        sets, filtering, weighted scoring and deterministic sorting to address a
+        practical issue related to discovering trips. Additionally, I improved
+        the quality of the database by creating normalized numeric fields,
+        performing schema validation, providing timestamped values, indexing
+        frequently accessed data and creating logical query repositories.
+      </p>
+      <p>
+        The enhancements shown above represent many valuable skills associated
+        with working in backend and full stack positions including: API design,
+        secure configuration, authentication, validation, automated testing,
+        data modeling, search/recommendation logic, written technical
+        communication, determining tradeoffs, preserving compatibility with
+        existing user interfaces, selecting legacy code over rewriting an
+        application to use new technology, focused testing where evidence is
+        most clear, writing test suites that verify behavior across multiple
+        areas of a system.
+      </p>
+      <p>
+        By the time I implemented the last set of enhancements to improve
+        database quality, there existed 23 successfully tested cases within my
+        test suite that spanned all areas of the design, algorithms and
+        persistence behaviors of the system.
+      </p>
+      <p>
+        This portfolio provides me with a way to showcase myself as a developer
+        that understands how to work across multiple tiers of a software stack
+        while considering maintainability, reliability, security and value to
+        stakeholders. The code reviews, artifact comparisons, enhancement
+        narratives and test evidence presented here not only indicate what I
+        built but why the changes were important.
       </p>
     </section>
 
     <section id="code-review">
-      <h2>Code Review</h2>
-
+      <h2>Code Review Video</h2>
       <p>
-        This code review examines the Travlr Getaways full-stack application
-        and explains the planned enhancements for software design and
-        engineering, algorithms and data structures, and databases.
+        The code review evaluates the original Travlr Getaways application and
+        explains the planned enhancements for software design and engineering,
+        algorithms and data structures, and databases.
       </p>
 
       <video controls preload="metadata">
@@ -129,19 +321,175 @@
       </video>
 
       <p>
-        <a href="assets/video/code_review_brandon_burks.mp4">
-          Open or download the code review video
+        <a class="button" href="assets/video/code_review_brandon_burks.mp4">
+          Open or download code review video
         </a>
       </p>
+    </section>
+
+    <section id="artifacts">
+      <h2>Original and Enhanced Artifacts</h2>
+      <p>
+        The original artifact is preserved separately from the enhanced versions
+        so reviewers can compare the baseline application against the completed
+        capstone improvements.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Original Artifact</h3>
+          <p class="meta">Travlr Getaways from CS 465 Full Stack Development</p>
+          <p>
+            Baseline MEAN-stack travel application with public pages, an Angular
+            admin SPA, Express API routes, MongoDB persistence, and JWT login.
+          </p>
+          <a class="button" href="assets/artifacts/travlr-getaways-original-source.zip">
+            Download original artifact
+          </a>
+        </article>
+
+        <article class="card">
+          <h3>Enhanced Artifact</h3>
+          <p class="meta">Final enhanced copy for database-focused milestone</p>
+          <p>
+            Final version containing the layered backend refactor,
+            recommendation endpoint, normalized database fields, validation,
+            indexes, and expanded backend tests.
+          </p>
+          <a class="button" href="assets/artifacts/travlr-getaways-enhanced-source.zip">
+            Download enhanced artifact
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="narratives">
+      <h2>Enhancement Narratives</h2>
+
+      <article class="card">
+        <h3>Enhancement One: Software Design and Engineering</h3>
+        <p>
+          This enhancement refactored the backend into explicit layers for
+          configuration, authentication middleware, validation, service logic,
+          repository access, and centralized error handling. It also strengthened
+          password handling with scrypt, added timing-safe comparison, validated
+          required environment variables at startup, sanitized unexpected API
+          errors, and introduced automated backend tests.
+        </p>
+        <p>
+          <span class="tag">Layered Architecture</span>
+          <span class="tag green">Secure API Design</span>
+          <span class="tag gold">13 Passing Tests</span>
+        </p>
+        <p>
+          This enhancement aligns with Course Outcomes 1, 4, and 5. The
+          architecture and security trade-off decisions support collaborative
+          decision making, while the layered backend refactor, automated backend
+          tests, GitHub Actions quality gate, safer configuration, reusable JWT
+          middleware, stronger password hashing, timing-safe verification, and
+          sanitized error responses demonstrate well-founded engineering
+          practices and a security mindset.
+        </p>
+        <a class="button" href="assets/docs/enhancement-one-narrative.pdf">
+          Open narrative one PDF
+        </a>
+      </article>
+
+      <article class="card">
+        <h3>Enhancement Two: Algorithms and Data Structures</h3>
+        <p>
+          This enhancement added a trip recommendation endpoint at
+          <code>GET /api/trips/recommendations</code>. The implementation
+          normalizes query criteria, tokenizes searchable trip data, builds an
+          inverted index with a Map and Sets, filters by budget and duration,
+          scores ranked matches, and applies deterministic tie-breaking.
+        </p>
+        <p>
+          <span class="tag">Inverted Index</span>
+          <span class="tag green">Weighted Ranking</span>
+          <span class="tag gold">19 Passing Tests</span>
+        </p>
+        <p>
+          This enhancement aligns with Course Outcomes 2, 3, and 4. The
+          narrative communicates the recommendation design, trade-offs, and test
+          evidence clearly for a technical audience, while the implementation
+          applies algorithmic principles through tokenization, inverted indexing,
+          sets, constraint filtering, weighted scoring, and stable sorting. It
+          also adds practical application value through an integrated
+          recommendation endpoint.
+        </p>
+        <a class="button" href="assets/docs/enhancement-two-narrative.pdf">
+          Open narrative two PDF
+        </a>
+      </article>
+
+      <article class="card">
+        <h3>Enhancement Three: Databases</h3>
+        <p>
+          This enhancement improved the MongoDB and Mongoose data model by
+          deriving structured fields from display values, including
+          <code>priceAmount</code>, <code>durationNights</code>, and
+          <code>searchText</code>. It added schema validation, timestamps,
+          uppercase trip-code normalization, a unique code index, a compound
+          price-and-duration index, a text-search index, and repository
+          prefiltering for recommendation criteria.
+        </p>
+        <p>
+          <span class="tag">Schema Design</span>
+          <span class="tag green">Indexes and Validation</span>
+          <span class="tag gold">23 Passing Tests</span>
+        </p>
+        <p>
+          This narrative aligns with Course Outcomes 4 and 5. It uses
+          well-founded database practices through Mongoose schema design,
+          validation, normalized stored fields, indexes, timestamps, and
+          repository query logic, while also strengthening data integrity by
+          rejecting malformed persistence values.
+        </p>
+        <a class="button" href="assets/docs/enhancement-three-narrative.pdf">
+          Open narrative three PDF
+        </a>
+      </article>
+    </section>
+
+    <section id="outcomes">
+      <h2>Course Outcome Alignment</h2>
+      <ul>
+        <li>
+          <strong>Outcome 1:</strong> Decision logs, code review findings, and
+          enhancement trade-off discussions show collaborative planning and
+          decision support.
+        </li>
+        <li>
+          <strong>Outcome 2:</strong> The code review video, this portfolio, and
+          the three written narratives demonstrate professional oral, written,
+          and visual communication.
+        </li>
+        <li>
+          <strong>Outcome 3:</strong> The recommendation endpoint demonstrates
+          algorithmic design through tokenization, an inverted index, filtering,
+          weighted scoring, and stable sorting.
+        </li>
+        <li>
+          <strong>Outcome 4:</strong> The layered backend refactor, automated
+          tests, CI quality gate, database schema improvements, and repository
+          query logic demonstrate well-founded computing practices that deliver
+          application value.
+        </li>
+        <li>
+          <strong>Outcome 5:</strong> Secure configuration, JWT middleware,
+          stronger password hashing, timing-safe comparison, sanitized errors,
+          validation, and data integrity checks demonstrate a security mindset.
+        </li>
+      </ul>
     </section>
   </main>
 
   <footer>
     <p>
-       2026 Brandon Burks |
-      <a href="https://github.com/BrandonBurks94">
-        GitHub Profile
-      </a>
+      2026 Brandon Burks |
+      <a href="https://github.com/BrandonBurks94">GitHub Profile</a>
     </p>
   </footer>
 </body>
